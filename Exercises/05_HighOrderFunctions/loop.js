@@ -1,3 +1,4 @@
+//Loops through values using start,test, update and body parameters
 function loop(start, test, update, body) {
     for (let value = start;
         test(value);

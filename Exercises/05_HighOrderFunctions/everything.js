@@ -1,3 +1,4 @@
+//Loops through elements in an array and checks if each value passes a particular test
 function every(array, test) {
     for(elem in array){
         if(!test(array[elem])) return false;
@@ -5,6 +6,7 @@ function every(array, test) {
     return true;
 }
 
+//Loops through elements using some function and checks whether each value passes a particular test
 function everySome(array, test) {
    return !array.some(element => !test(element));
 }

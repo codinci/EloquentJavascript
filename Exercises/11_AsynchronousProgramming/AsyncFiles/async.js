@@ -1,4 +1,4 @@
-import { bigOak, everywhere, defineRequestType } from './crowTech.js'
+import { everywhere, defineRequestType } from './crowTech.js'
 
 defineRequestType("note", (nest, content, source, done) => {
     console.log(`${nest.name} received note: ${content}`);

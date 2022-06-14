@@ -1,6 +1,7 @@
 import { anyStorage } from "./AsyncFiles/async.js";
 import { bigOak } from "./AsyncFiles/crowTech.js";
 
+//Using the 'async' 'await' function
 async function locateScalpel(nest) {
     let current = nest.name;
     for (;;) {
@@ -9,6 +10,7 @@ async function locateScalpel(nest) {
         current = next;
     }
 }
+
 
 function locateScalpel2(nest) {
     function loop(current) {

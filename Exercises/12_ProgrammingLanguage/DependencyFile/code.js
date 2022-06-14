@@ -52,9 +52,9 @@ function parse(program) {
 //    args: [{type: "word", name: "a"},
 //           {type: "value", value: 10}]}
 
-var specialForms = Object.create(null);
+export var specialForms = Object.create(null);
 
-function evaluate(expr, scope) {
+export function evaluate(expr, scope) {
     if (expr.type == "value") {
         return expr.value;
     } else if (expr.type == "word") {
@@ -162,4 +162,4 @@ specialForms.fun = (args, scope) => {
     };
 };
 
-console.log(parse("a # one\n   # two\n()"));
+// console.log(parse("a # one\n   # two\n()"));

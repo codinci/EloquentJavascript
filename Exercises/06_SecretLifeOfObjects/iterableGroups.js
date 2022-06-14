@@ -50,4 +50,12 @@ class GroupIterator {
 
 for (let value of Group.from(["a", "b", "c"])) {
     console.log(value);
-  }
+}
+
+/** Using Generator functions to iterate through the elements in group */
+
+// Group.prototype[Symbol.iterator] = function*() {
+//     for (let i = 0; i < this.elements.length; i++) {
+//         yield this.elements[i];
+//     }
+// };

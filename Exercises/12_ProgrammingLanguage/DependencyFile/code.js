@@ -14,10 +14,10 @@ function parseExpression(program) {
     return parseApply(expr, program.slice(match[0].length));
 }
 
+//Updated the skipSpace function to allow comments
 function skipSpace(string) {
-    let first = string.search(/\S/);
-    if (first == -1) return "";
-    return string.slice(first);
+    let skippable = string.match(/^(\s|#.*)*/);
+    return string.slice(skippable[0].length);
 }
 
 function parseApply(expr, program) {
@@ -161,3 +161,5 @@ specialForms.fun = (args, scope) => {
         return evaluate(body, localScope);
     };
 };
+
+console.log(parse("a # one\n   # two\n()"));

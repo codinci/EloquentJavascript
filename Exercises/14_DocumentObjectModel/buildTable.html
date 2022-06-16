@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mountains</h1>
+
+    <div id="mountains"></div>
+</body>
+<script>
+    const MOUNTAINS = [
+        {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+        {name: "Everest", height: 8848, place: "Nepal"},
+        {name: "Mount Fuji", height: 3776, place: "Japan"},
+        {name: "Vaalserberg", height: 323, place: "Netherlands"},
+        {name: "Denali", height: 6168, place: "United States"},
+        {name: "Popocatepetl", height: 5465, place: "Mexico"},
+        {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+    ];
+
+    function buildTable(data) {
+        let myTable = document.createElement('table');
+        table.appendChild(myTable);
+
+        let fields = Object.keys(data[0]);
+        let tableHeadRow = document.createElement('tr');
+        fields.forEach(function(headField){
+            let tableHeadItems = document.createElement('th');
+            tableHeadItems.appendChild(document.createTextNode(headField));
+            tableHeadRow.appendChild(tableHeadItems);
+        });
+
+        myTable.appendChild(tableHeadRow);
+
+        data.forEach(function(object) {
+            let row = document.createElement('tr');
+            fields.forEach(function(tableItem) {
+                let tableValues = document.createElement('td');
+                tableValues.appendChild(document.createTextNode(object[tableItem]));
+                if(typeof object[tableItem] == 'number') {
+                    tableValues.style.float = 'right';
+                }
+                row.appendChild(tableValues);
+            });
+            myTable.appendChild(row);
+        });
+        return myTable;
+    }
+
+    const table = document.getElementById('mountains');
+    table.appendChild(buildTable(MOUNTAINS));
+</script>
+</html>
